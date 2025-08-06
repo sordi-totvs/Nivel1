@@ -15,7 +15,7 @@ namespace ConsoleApp1
             {
                 option = -1;
                 Console.Clear();
-                Console.WriteLine("\nSelecione uma opção para continuar:\n0 = Sair");
+                Console.WriteLine("Selecione uma opção para continuar:\n0 = Sair");
                 for(int i = 1; i <= 6; i++)
                 {
                     Console.WriteLine(i + " = Exercício " + i);

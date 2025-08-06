@@ -5,20 +5,14 @@ using System.Linq;
 
 namespace ConsoleApp1
 {
-    internal class Exercicio3
+    internal class Exercicio3 : Exercicio
     {
-        public void Run()
+        public Exercicio3()
         {
-            Console.Clear();
-            Console.WriteLine("Exercício 3");
-
-            Matematica();
-
-            Console.WriteLine("\n\nPressione qualquer tecla para continuar...");
-            Console.ReadLine();
+            Name = "Exercício 3";
         }
 
-        private void Matematica()
+        protected override void MainProcess()
         {
             var nomeCompleto = new List<string>();
 

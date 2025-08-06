@@ -2,23 +2,19 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
+using System.Xml.Linq;
 
 namespace ConsoleApp1
 {
-    internal class Exercicio2
+    internal class Exercicio2 : Exercicio
     {
-        public void Run()
+
+        public Exercicio2()
         {
-            Console.Clear();
-            Console.WriteLine("Exercício 2");
-
-            LerNome();
-
-            Console.WriteLine("\n\nPressione qualquer tecla para continuar...");
-            Console.ReadLine();
+            Name = "Exercício 2";
         }
 
-        private void LerNome()
+        protected override void MainProcess()
         {
             var nomeCompleto = new List<string>();
 

@@ -2,20 +2,14 @@
 
 namespace ConsoleApp1
 {
-    internal class Exercicio5
+    internal class Exercicio5 : Exercicio
     {
-        public void Run()
+        public Exercicio5()
         {
-            Console.Clear();
-            Console.WriteLine("Exercício 5");
-
-            MainProcess();
-
-            Console.WriteLine("\n\nPressione qualquer tecla para continuar...");
-            Console.ReadLine();
+            Name = "Exercício 5";
         }
 
-        private void MainProcess()
+        protected override void MainProcess()
         {
             Console.Write("Digite a placa do carro: ");
             string placa = Console.ReadLine().ToUpper();

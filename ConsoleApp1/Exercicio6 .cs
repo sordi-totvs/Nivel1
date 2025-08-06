@@ -1,21 +1,16 @@
 ﻿using System;
+using System.Xml.Linq;
 
 namespace ConsoleApp1
 {
-    internal class Exercicio6
+    internal class Exercicio6 : Exercicio
     {
-        public void Run()
+        public Exercicio6()
         {
-            Console.Clear();
-            Console.WriteLine("Exercício 6");
-
-            MainProcess();
-
-            Console.WriteLine("\n\nPressione qualquer tecla para continuar...");
-            Console.ReadLine();
+            Name = "Exercício 6";
         }
 
-        private void MainProcess()
+        protected override void MainProcess()
         {
             DateTime dateTime = DateTime.Now;
 

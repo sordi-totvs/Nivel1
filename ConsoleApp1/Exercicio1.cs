@@ -2,23 +2,17 @@
 
 namespace ConsoleApp1
 {
-    internal class Exercicio1
+    internal class Exercicio1 : Exercicio
     {
-        public void Run()
+        public Exercicio1()
         {
-            Console.Clear();
-            Console.WriteLine("Exercício 1");
-
-            LerNome();
-
-            Console.WriteLine("\n\nPressione qualquer tecla para continuar...");
-            Console.ReadLine();
+            Name = "Exercício 1";
         }
 
-        private void LerNome()
+        protected override void MainProcess()
         {
             Console.Write("Digite seu nome: ");
-            string nome = Console.ReadLine();
+            string nome = Console.ReadLine().Trim();
             Console.WriteLine($"Olá, {nome}! Seja muito bem vindo!");
         }
     }

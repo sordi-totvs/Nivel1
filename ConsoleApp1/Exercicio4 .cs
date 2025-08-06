@@ -2,23 +2,19 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
+using System.Xml.Linq;
 
 namespace ConsoleApp1
 {
-    internal class Exercicio4
+    internal class Exercicio4 : Exercicio
     {
-        public void Run()
+
+        public Exercicio4()
         {
-            Console.Clear();
-            Console.WriteLine("Exercício 4");
-
-            Caracteres();
-
-            Console.WriteLine("\n\nPressione qualquer tecla para continuar...");
-            Console.ReadLine();
+            Name = "Exercício 4";
         }
 
-        private void Caracteres()
+        protected override void MainProcess()
         {
             Console.Write("Digite uma palavra ou frase: ");
             string texto1 = Console.ReadLine();
