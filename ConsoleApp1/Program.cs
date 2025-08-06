@@ -23,58 +23,30 @@ namespace ConsoleApp1
                 input = Console.ReadLine();
                 success = int.TryParse(input, out option);
 
-                if (!success) {
-                    option = -1;
-                    continue;
-                }
-
-                switch (option)
+                if (success && (option >= 1 && option <= 6))
                 {
-                    case 0:
-                        {
-                            return;
-                        }
-                    case 1:
-                        {
-                            var exercicio = new Exercicio1();
-                            exercicio.Run();
-                            break;
-                        }
-                    case 2:
-                        {
-                            var exercicio = new Exercicio2();
-                            exercicio.Run();
-                            break;
-                        }
-                    case 3:
-                        {
-                            var exercicio = new Exercicio3();
-                            exercicio.Run();
-                            break;
-                        }
-                    case 4:
-                        {
-                            var exercicio = new Exercicio4();
-                            exercicio.Run();
-                            break;
-                        }
-                    case 5:
-                        {
-                            var exercicio = new Exercicio5();
-                            exercicio.Run();
-                            break;
-                        }
-                    case 6:
-                        {
-                            var exercicio = new Exercicio6();
-                            exercicio.Run();
-                            break;
-                        }
+                    TryRun(option);
+                    option = -1;
                 }
-
-                option = -1;
+              
             }
 
+        }
+
+        static void TryRun(int exerciseNumber)
+        {
+            string className = $"Exercicio{exerciseNumber}";
+
+            Type type = Type.GetType($"ConsoleApp1.{className}");
+
+            if (type == null)
+            {
+                Console.WriteLine($"Classe inválida: {className}");
+                return;
+            }
+
+            Exercicio exercicio = (Exercicio)Activator.CreateInstance(type);
+            exercicio.Run();
         }
     }
 }
